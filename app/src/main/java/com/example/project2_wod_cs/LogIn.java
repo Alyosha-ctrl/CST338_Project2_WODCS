@@ -1,31 +1,38 @@
 package com.example.project2_wod_cs;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.project2_wod_cs.databinding.ActivityMainBinding;
+import com.example.project2_wod_cs.databinding.ActivityLogInBinding;
 
 public class LogIn extends AppCompatActivity {
 
-    ActivityMainBinding binding;
+    ActivityLogInBinding binding;
+
+    String username = "";
+    String password = "";
+    String passwordAgain = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityLogInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-//        super.onCreate(savedInstanceState);
-//        EdgeToEdge.enable(this);
-//        setContentView(R.layout.activity_log_in);
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-//            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-//            return insets;
-//        });
+
+        binding.logInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateDisplay();
+                Toast.makeText(LogIn.this, "It Worked", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void updateDisplay(){
+        Log.d("LOG_IN", "Update Display Not Finished Yet");
     }
 }
