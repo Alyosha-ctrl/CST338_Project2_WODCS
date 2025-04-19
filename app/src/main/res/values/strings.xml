@@ -7,4 +7,6 @@
     <string name="enter_password">Enter Password</string>
     <string name="enter_your_password_again">Enter your password again</string>
     <string name="password_again">Password Again</string>
+    <string name="sign_up">Sign Up!</string>
+    <string name="welcome_to_wodcs">Welcome to WODCS</string>
 </resources>
