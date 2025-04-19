@@ -33,7 +33,7 @@
         />
 
     <EditText
-        android:id="@+id/ExerciseInputEditText"
+        android:id="@+id/UsernameInputEditText"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
