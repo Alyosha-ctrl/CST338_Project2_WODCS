@@ -7,4 +7,108 @@
     android:layout_height="match_parent"
     tools:context=".LogIn">
 
+    <TextView
+        android:id="@+id/logDisplayTextView"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dip"
+        android:padding="8dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ExcerciseLabelTextView"
+        android:layout_width="105dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/username"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logDisplayTextView" />
+
+    <EditText
+        android:id="@+id/ExerciseInputEditText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/enter_user_name"
+        android:inputType="textAutoComplete"
+        android:padding="8dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/ExcerciseLabelTextView"
+        app:layout_constraintStart_toEndOf="@id/ExcerciseLabelTextView"
+        app:layout_constraintTop_toBottomOf="@id/logDisplayTextView" />
+
+    <TextView
+        android:id="@+id/WeightLabelTextView"
+        android:layout_width="105dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/password"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ExcerciseLabelTextView" />
+
+    <EditText
+        android:id="@+id/WeightInputEditText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/enter_password"
+        android:padding="8dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/WeightLabelTextView"
+        app:layout_constraintStart_toEndOf="@id/WeightLabelTextView"
+        app:layout_constraintTop_toBottomOf="@id/logDisplayTextView" />
+
+    <TextView
+        android:id="@+id/RepsLabelTextView"
+        android:layout_width="105dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/password_again"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/WeightLabelTextView" />
+
+    <EditText
+        android:id="@+id/RepsInputEditText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/enter_your_password_again"
+        android:padding="8dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/RepsLabelTextView"
+        app:layout_constraintStart_toEndOf="@id/RepsLabelTextView" />
+
+    <Button
+        android:id="@+id/logButton"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/log_in"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/RepsLabelTextView" />
+
+    <TextView
+        android:id="@+id/log_in_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to WODCS"
+        android:textSize="36sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/logDisplayTextView"
+        app:layout_constraintStart_toStartOf="@+id/logDisplayTextView"
+        tools:layout_editor_absoluteY="96dp"
+        tools:ignore="MissingConstraints"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
