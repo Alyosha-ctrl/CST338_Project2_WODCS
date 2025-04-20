@@ -38,8 +38,9 @@ public abstract class AppDatabase extends RoomDatabase {
 
     private static final RoomDatabase.Callback addDefaultValues = new RoomDatabase.Callback(){
         @Override
-        public void onCreate(@NonNull SupportSQLiteDatabase db){
+        public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
             //TODO: create a tag so we can see this works in the logcat or app inspection window
             //TODO: Use databaseWriteExecutor.execute(() -> {...}
-}
+        }
+    }
