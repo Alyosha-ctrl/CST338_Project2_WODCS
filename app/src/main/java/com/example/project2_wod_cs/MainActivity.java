@@ -3,6 +3,7 @@
  */
 package com.example.project2_wod_cs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -23,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         binding.logInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startLogIn();
+                Intent intent = new Intent(getApplicationContext(), LogIn.class);
+                startActivity(intent);
             }
         });
 
@@ -34,11 +36,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void startLogIn(){
-        Toast.makeText(MainActivity.this, "Clicked The Log In Button", Toast.LENGTH_SHORT).show();
-    }
-
     private void startSignUp(){
         Toast.makeText(MainActivity.this, "Sign Up Not Currently Implemented", Toast.LENGTH_LONG).show();
     }
