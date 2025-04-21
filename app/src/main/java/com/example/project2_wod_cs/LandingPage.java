@@ -1,5 +1,7 @@
 package com.example.project2_wod_cs;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -35,8 +37,11 @@ public class LandingPage extends AppCompatActivity {
         if(isStoryteller){
             binding.storytellerButton.setVisibility(View.VISIBLE);
         }
-
-        binding.welcomeText.setText(User.getUsername);
+        if(username.isEmpty()){
+            username = "Default_User";
+        }
+        username = "Welcome " + username;
+        binding.welcomeText.setText(username);
     }
 
 
@@ -46,5 +51,9 @@ public class LandingPage extends AppCompatActivity {
 
     private void startStoryteller(){
         Toast.makeText(LandingPage.this, "Storyteller Not Currently Implemented", Toast.LENGTH_LONG).show();
+    }
+
+    static Intent loginIntentFactory(Context context){
+        return new Intent(context, LogIn.class);
     }
 }
