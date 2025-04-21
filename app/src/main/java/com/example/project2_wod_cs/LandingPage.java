@@ -10,11 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.project2_wod_cs.databinding.ActivityLandingPageBinding;
 
 public class LandingPage extends AppCompatActivity {
-
     ActivityLandingPageBinding binding;
-
+    public static final String USER_ID_KEY = "user_id";
     private String username = "";
     private Boolean isStoryteller = true;
+    private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -53,7 +53,9 @@ public class LandingPage extends AppCompatActivity {
         Toast.makeText(LandingPage.this, "Storyteller Not Currently Implemented", Toast.LENGTH_LONG).show();
     }
 
-    static Intent loginIntentFactory(Context context){
-        return new Intent(context, LogIn.class);
+    static Intent landingPageIntentFactory(Context context, int userId){
+        Intent intent = new Intent(context, LandingPage.class);
+        intent.putExtra(USER_ID_KEY, userId);
+        return intent;
     }
 }

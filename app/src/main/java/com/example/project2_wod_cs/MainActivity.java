@@ -24,12 +24,12 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        loginUser();
-
-        if(loggedInUserId == LOGGED_OUT){
-            Intent intent = LogIn.loginIntentFactory((getApplicationContext()));
-            startActivity(intent);
-        }
+//        loginUser();
+//
+//        if(loggedInUserId == LOGGED_OUT){
+//            Intent intent = LogIn.loginIntentFactory((getApplicationContext()));
+//            startActivity(intent);
+//        }
 
         binding.logInButton.setOnClickListener(new View.OnClickListener() {
             @Override

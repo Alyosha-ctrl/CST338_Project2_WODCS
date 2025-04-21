@@ -39,11 +39,13 @@ public class LogIn extends AppCompatActivity {
         binding.SignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toastMaker("No Sign Up Functionality Yet");
+                Intent intent = new Intent(getApplicationContext(), LandingPage.class);
+                startActivity(intent);
             }
         });
     }
 
+    @Deprecated
     private boolean getInformationFromDisplay(){
         username = binding.UsernameInputEditText.getText().toString();
         password = binding.PasswordInputEditText.getText().toString();
@@ -67,7 +69,9 @@ public class LogIn extends AppCompatActivity {
             if(user != null){
                 String password = binding.PasswordInputEditText.getText().toString();
                 if(password.equals(user.getPassword())){
-                    startActivity(MainActivity.mainActivityIntentFactory(getApplicationContext(), user.getId()));
+                    Intent intent = LandingPage.landingPageIntentFactory(getApplicationContext(), user.getId());
+                    startActivity(intent);
+//                    startActivity(LandingPage.landingPageIntentFactory(getApplicationContext(), user.getId()));
                 }
                 else{
                     toastMaker("Invalid Password");
@@ -84,10 +88,6 @@ public class LogIn extends AppCompatActivity {
 
     private void toastMaker(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-    }
-
-    private void startLogIn(){
-        Log.d("LOG_IN", "startLogInCannotBeCompletedWithoutDatabase");
     }
 
     static Intent loginIntentFactory(Context context){
