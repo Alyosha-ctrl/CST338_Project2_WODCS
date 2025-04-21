@@ -51,7 +51,6 @@ public class LogIn extends AppCompatActivity {
         Toast.makeText(LogIn.this, "Password, Not Equal to Password Again", Toast.LENGTH_LONG).show();
         return false;
     }
-
     private void startLogIn(){
         Log.d("LOG_IN", "startLogInCannotBeCompletedWithoutDatabase");
     }

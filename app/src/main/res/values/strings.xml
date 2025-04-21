@@ -10,4 +10,6 @@
     <string name="sign_up">Sign Up!</string>
     <string name="welcome_to_wodcs">Welcome to WODCS</string>
     <string name="wodcs_log_in">WODCS Log In</string>
+    <string name="games">Games</string>
+    <string name="sheets">Sheets</string>
 </resources>
