@@ -1,5 +1,5 @@
 /**
- * Will becom landing page
+ * Will become landing page
  */
 package com.example.project2_wod_cs;
 

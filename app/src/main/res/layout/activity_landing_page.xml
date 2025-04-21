@@ -6,12 +6,12 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/welcomeText"
         android:layout_width="289dp"
         android:layout_height="75dp"
         android:layout_marginTop="64dp"
         android:gravity="center"
-        android:text="Welcome [username]"
+        android:text="Welcome"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/playerButton"
         android:layout_width="188dp"
         android:layout_height="106dp"
         android:text="@string/player"
@@ -32,15 +32,15 @@
         />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/storytellerButton"
         android:layout_width="188dp"
         android:layout_height="106dp"
-        android:text="@string/storyteller"
+        android:text="@string/games"
         android:textSize="25sp"
-        tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="312dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="312dp"
+        android:visibility="invisible"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

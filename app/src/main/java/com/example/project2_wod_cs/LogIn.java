@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.project2_wod_cs.databinding.ActivityLogInBinding;
 
 public class LogIn extends AppCompatActivity {
