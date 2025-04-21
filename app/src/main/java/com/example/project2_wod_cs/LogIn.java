@@ -1,5 +1,6 @@
 package com.example.project2_wod_cs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,6 +37,9 @@ public class LogIn extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(LogIn.this, "No Sign Up Functionality Yet", Toast.LENGTH_LONG).show();
+                //Jury rigged stuff just to test out the page and see if it works
+                Intent intent = new Intent(getApplicationContext(), LandingPage.class);
+                startActivity(intent);
             }
         });
     }
