@@ -26,8 +26,8 @@ public abstract class AppDatabase extends RoomDatabase {
     private static final int NUMBER_OF_THREADS = 6;
     static final ExecutorService databaseWriteExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    static AppDatabase getDatabase(final Context context){
-        if(INSTANCE == null){
+    static AppDatabase getDatabase(final Context context) {
+        if (INSTANCE == null) {
             synchronized (AppDatabase.class) {
                 INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, DATABASE_NAME).fallbackToDestructiveMigration(true).addCallback(addDefaultValues).build();
             }
@@ -36,11 +36,22 @@ public abstract class AppDatabase extends RoomDatabase {
     }
 
 
-    private static final RoomDatabase.Callback addDefaultValues = new RoomDatabase.Callback(){
+    private static final RoomDatabase.Callback addDefaultValues = new RoomDatabase.Callback() {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
-            //TODO: create a tag so we can see this works in the logcat or app inspection window
-            //TODO: Use databaseWriteExecutor.execute(() -> {...}
+            databaseWriteExecutor.execute(()->{
+                UserDAO dao = INSTANCE.userDAO();
+                dao.deleteAll();
+                User storyTeller = new User("storyTeller1","storyTeller1");
+                storyTeller.setStoryTeller(true);
+                dao.insert(storyTeller);
+
+                User testPlayer = new User("testPlayer", "testPlayer");
+                dao.insert(testPlayer);
+            });
         }
-    }
+    };
+
+    public abstract UserDAO userDAO();
+}
