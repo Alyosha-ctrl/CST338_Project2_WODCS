@@ -29,6 +29,8 @@ public class LogIn extends AppCompatActivity {
         binding = ActivityLogInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        repository = AppDataRepository.getRepository(getApplication());
+
         binding.logInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +69,7 @@ public class LogIn extends AppCompatActivity {
             if(user != null){
                 String password = binding.PasswordInputEditText.getText().toString();
                 if(password.equals(user.getPassword())){
+
                     startActivity(MainActivity.mainActivityIntentFactory(getApplicationContext(), user.getId()));
                 }
                 else{
