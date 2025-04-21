@@ -28,7 +28,7 @@
         tools:layout_editor_absoluteY="163dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
+        app:layout_constraintTop_toBottomOf="@id/welcomeText"
         />
 
     <Button
@@ -41,6 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="312dp"
         android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/playerButton"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

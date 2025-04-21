@@ -13,11 +13,13 @@ public class AppDataRepository {
     private ArrayList<User> allUsers;
     private UserDAO userDAO;
 
-    private AppDataRepository(Application application){
+    public AppDataRepository(Application application){
         AppDatabase db = AppDatabase.getDatabase(application);
         this.userDAO = db.userDAO();
 
     }
+
+    //TODO MAKE A NEW METHOD TO MAKE REPOSITORIES IN A SINGLETON MANNER
 
     public ArrayList<User> getAllUsers() {
         return allUsers;

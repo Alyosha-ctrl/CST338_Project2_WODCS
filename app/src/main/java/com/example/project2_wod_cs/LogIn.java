@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import com.example.project2_wod_cs.Database.AppDataRepository;
+import com.example.project2_wod_cs.Database.UserDAO;
 import com.example.project2_wod_cs.Database.entities.User;
 import com.example.project2_wod_cs.databinding.ActivityLogInBinding;
 
@@ -28,6 +29,8 @@ public class LogIn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityLogInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        repository = new AppDataRepository(getApplication());
 
         binding.logInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +62,7 @@ public class LogIn extends AppCompatActivity {
     }
 
     private void verifyUser() {
-        String username = binding.UsernameInputEditText.getText().toString();
+        username = binding.UsernameInputEditText.getText().toString();
         if(username.isEmpty()){
             toastMaker("Username may not be blank");
             return;
@@ -71,7 +74,7 @@ public class LogIn extends AppCompatActivity {
                 if(password.equals(user.getPassword())){
                     Intent intent = LandingPage.landingPageIntentFactory(getApplicationContext(), user.getId());
                     startActivity(intent);
-//                    startActivity(LandingPage.landingPageIntentFactory(getApplicationContext(), user.getId()));
+//                    startActivity(MainActivity.getMainActivityIntentFactory(getApplicationContext(), user.getId()));
                 }
                 else{
                     toastMaker("Invalid Password");
