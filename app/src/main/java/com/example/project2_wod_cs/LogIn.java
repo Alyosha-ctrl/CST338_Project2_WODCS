@@ -43,11 +43,6 @@ public class LogIn extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toastMaker("No Sign Up Functionality Yet");
-                //Jank method just to see if LandingPage can be reached.
-                username = binding.UsernameInputEditText.getText().toString();
-                Intent intent = LandingPage.landingPageIntentFactory(getApplicationContext(), username);
-                startActivity(intent);
-                //End of Jank
             }
         });
     }
@@ -76,6 +71,7 @@ public class LogIn extends AppCompatActivity {
             if(user != null){
                 String password = binding.PasswordInputEditText.getText().toString();
                 if(password.equals(user.getPassword())){
+                    toastMaker("Login Success");
                     Intent intent = LandingPage.landingPageIntentFactory(getApplicationContext(), user.getUsername());
                     startActivity(intent);
 //                    startActivity(MainActivity.getMainActivityIntentFactory(getApplicationContext(), user.getId()));
