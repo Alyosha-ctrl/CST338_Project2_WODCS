@@ -3,6 +3,7 @@ package com.example.project2_wod_cs;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -17,7 +18,7 @@ public class LandingPage extends AppCompatActivity {
     public static final String USERNAME_KEY = "user_id";
     private AppDataRepository repository;
     private String username = "";
-    private Boolean isStoryteller = true;
+    private Boolean isStoryteller = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -25,7 +26,14 @@ public class LandingPage extends AppCompatActivity {
         binding = ActivityLandingPageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        repository = AppDataRepository.getRepository(getApplication());
         username = getIntent().getStringExtra(USERNAME_KEY);
+        try {
+            isStoryteller = repository.getUserByUserName(username).getValue().isStoryTeller();
+        } catch (NullPointerException e) {
+            Log.d("landing_page", "isStoryTeller returned a null pointer using the default of false");
+        }
+
 
 
         binding.playerButton.setOnClickListener(new View.OnClickListener() {

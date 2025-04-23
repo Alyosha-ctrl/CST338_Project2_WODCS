@@ -43,6 +43,11 @@ public class LogIn extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toastMaker("No Sign Up Functionality Yet");
+                //Jank method just to see if LandingPage can be reached.
+                username = binding.UsernameInputEditText.getText().toString();
+                Intent intent = LandingPage.landingPageIntentFactory(getApplicationContext(), username);
+                startActivity(intent);
+                //End of Jank
             }
         });
     }
