@@ -69,7 +69,7 @@ public class LogIn extends AppCompatActivity {
             if(user != null){
                 String password = binding.PasswordInputEditText.getText().toString();
                 if(password.equals(user.getPassword())){
-
+                    toastMaker("Login Success");
                     startActivity(MainActivity.mainActivityIntentFactory(getApplicationContext(), user.getId()));
                 }
                 else{
