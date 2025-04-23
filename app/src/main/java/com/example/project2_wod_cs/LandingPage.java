@@ -11,16 +11,18 @@ import com.example.project2_wod_cs.databinding.ActivityLandingPageBinding;
 
 public class LandingPage extends AppCompatActivity {
     ActivityLandingPageBinding binding;
-    public static final String USER_ID_KEY = "user_id";
+    public static final String USERNAME_KEY = "user_id";
     private String username = "";
     private Boolean isStoryteller = true;
-    private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         binding = ActivityLandingPageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        username = getIntent().getStringExtra(USERNAME_KEY);
+
 
         binding.playerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,9 +39,7 @@ public class LandingPage extends AppCompatActivity {
         if(isStoryteller){
             binding.storytellerButton.setVisibility(View.VISIBLE);
         }
-        if(username.isEmpty()){
-            username = "Default_User";
-        }
+
         username = "Welcome " + username;
         binding.welcomeText.setText(username);
     }
@@ -53,9 +53,9 @@ public class LandingPage extends AppCompatActivity {
         Toast.makeText(LandingPage.this, "Storyteller Not Currently Implemented", Toast.LENGTH_LONG).show();
     }
 
-    static Intent landingPageIntentFactory(Context context, int userId){
+    static Intent landingPageIntentFactory(Context context, String username){
         Intent intent = new Intent(context, LandingPage.class);
-        intent.putExtra(USER_ID_KEY, userId);
+        intent.putExtra(USERNAME_KEY, username);
         return intent;
     }
 }

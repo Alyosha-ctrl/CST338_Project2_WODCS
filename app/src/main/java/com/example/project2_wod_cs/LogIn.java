@@ -72,7 +72,7 @@ public class LogIn extends AppCompatActivity {
             if(user != null){
                 String password = binding.PasswordInputEditText.getText().toString();
                 if(password.equals(user.getPassword())){
-                    Intent intent = LandingPage.landingPageIntentFactory(getApplicationContext(), user.getId());
+                    Intent intent = LandingPage.landingPageIntentFactory(getApplicationContext(), user.getUsername());
                     startActivity(intent);
 //                    startActivity(MainActivity.getMainActivityIntentFactory(getApplicationContext(), user.getId()));
                 }
