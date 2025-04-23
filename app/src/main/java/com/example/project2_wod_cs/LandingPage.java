@@ -61,6 +61,7 @@ public class LandingPage extends AppCompatActivity {
         Toast.makeText(LandingPage.this, "Player Not Currently Implemented", Toast.LENGTH_LONG).show();
     }
 
+    //Comment here so I can push stuff.
     private void startStoryteller(){
         Toast.makeText(LandingPage.this, "Storyteller Not Currently Implemented", Toast.LENGTH_LONG).show();
     }
