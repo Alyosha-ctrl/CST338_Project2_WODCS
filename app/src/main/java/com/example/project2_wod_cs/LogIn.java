@@ -30,7 +30,7 @@ public class LogIn extends AppCompatActivity {
         binding = ActivityLogInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        repository = new AppDataRepository(getApplication());
+        repository = AppDataRepository.getRepository(getApplication());
 
         binding.logInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,8 +42,7 @@ public class LogIn extends AppCompatActivity {
         binding.SignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), LandingPage.class);
-                startActivity(intent);
+                toastMaker("No Sign Up Functionality Yet");
             }
         });
     }
@@ -91,6 +90,10 @@ public class LogIn extends AppCompatActivity {
 
     private void toastMaker(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void startLogIn(){
+        Log.d("LOG_IN", "startLogInCannotBeCompletedWithoutDatabase");
     }
 
     static Intent loginIntentFactory(Context context){

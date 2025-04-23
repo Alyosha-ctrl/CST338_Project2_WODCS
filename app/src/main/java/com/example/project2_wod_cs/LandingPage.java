@@ -7,11 +7,15 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.project2_wod_cs.Database.AppDataRepository;
 import com.example.project2_wod_cs.databinding.ActivityLandingPageBinding;
 
 public class LandingPage extends AppCompatActivity {
+
     ActivityLandingPageBinding binding;
     public static final String USERNAME_KEY = "user_id";
+    private AppDataRepository repository;
     private String username = "";
     private Boolean isStoryteller = true;
 

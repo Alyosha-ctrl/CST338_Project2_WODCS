@@ -1,6 +1,7 @@
 package com.example.project2_wod_cs.Database;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Insert;
@@ -8,18 +9,42 @@ import androidx.room.Insert;
 import com.example.project2_wod_cs.Database.entities.User;
 
 import java.util.ArrayList;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 public class AppDataRepository {
     private ArrayList<User> allUsers;
     private UserDAO userDAO;
 
-    public AppDataRepository(Application application){
+    private static AppDataRepository repository;
+
+    private AppDataRepository(Application application){
         AppDatabase db = AppDatabase.getDatabase(application);
         this.userDAO = db.userDAO();
 
     }
 
-    //TODO MAKE A NEW METHOD TO MAKE REPOSITORIES IN A SINGLETON MANNER
+    public  static AppDataRepository getRepository(Application application){
+
+        if(repository != null){
+            return repository;
+        }
+
+        Future<AppDataRepository> future = AppDatabase.databaseWriteExecutor.submit(new Callable<AppDataRepository>() {
+            @Override
+            public AppDataRepository call() throws Exception {
+                return new AppDataRepository(application);
+            }
+        });
+        try{
+            return future.get();
+        } catch (ExecutionException | InterruptedException e) {
+            Log.d("ourapp", "Problem getting GymLogRepository, thread error.");
+        }
+
+        return null;
+    }
 
     public ArrayList<User> getAllUsers() {
         return allUsers;

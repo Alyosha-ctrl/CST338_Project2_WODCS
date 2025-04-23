@@ -14,6 +14,7 @@ import com.example.project2_wod_cs.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     public static final int LOGGED_OUT = -1;
+    public static final String TAG = "OUrApp";
     private static final String MAIN_ACTIVITY_USER_ID = "com.example.project2_wod_cs.MAIN_ACTIVITY_USER_ID";
     private int loggedInUserId = -1;
     ActivityMainBinding binding;
