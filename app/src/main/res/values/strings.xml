@@ -13,4 +13,6 @@
     <string name="player">Player</string>
     <string name="storyteller">Storyteller</string>
     <string name="games">Games</string>
+    <string name="preference_userId_key">WODCSUserIdPreferencesKey</string>
+    <string name="preference_file_key">WODCSPreferencesFileName</string>
 </resources>

@@ -3,6 +3,7 @@ package com.example.project2_wod_cs.Database;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
@@ -25,11 +26,17 @@ public abstract class AppDatabase extends RoomDatabase {
     private static volatile AppDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 6;
     static final ExecutorService databaseWriteExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
+    private UserDAO userDAO;
 
     static AppDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
             synchronized (AppDatabase.class) {
-                INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, DATABASE_NAME).fallbackToDestructiveMigration(true).addCallback(addDefaultValues).build();
+                if(INSTANCE == null)
+                {
+                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
+                            AppDatabase.class,
+                            DATABASE_NAME).fallbackToDestructiveMigration(true).addCallback(addDefaultValues).build();
+                }
             }
         }
         return INSTANCE;
@@ -52,6 +59,10 @@ public abstract class AppDatabase extends RoomDatabase {
             });
         }
     };
+
+    public LiveData<User> getUserByUserName(String username) {
+        return userDAO.getUserByUsername(username);
+    }
 
     public abstract UserDAO userDAO();
 }
