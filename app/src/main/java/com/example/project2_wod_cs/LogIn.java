@@ -51,7 +51,7 @@ public class LogIn extends AppCompatActivity {
         password = binding.PasswordInputEditText.getText().toString();
         passwordAgain = binding.PasswordAgainInputEditText.getText().toString();
         if(password.equals(passwordAgain)){
-            toastMaker("Succesfully Entered Log In Information");
+            toastMaker("Successfully Entered Log In Information");
             return true;
         }
         toastMaker("Password, Not Equal to Password Again");
