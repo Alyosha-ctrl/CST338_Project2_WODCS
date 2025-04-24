@@ -16,7 +16,7 @@ import com.example.project2_wod_cs.Database.entities.User;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {User.class, CharacterSheet.class, Game.class}, version = 2, exportSchema = false)
+@Database(entities = {User.class, CharacterSheet.class, Game.class}, version = 3, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     public static final String DATABASE_NAME = "WODCSDatabase";
@@ -41,7 +41,6 @@ public abstract class AppDatabase extends RoomDatabase {
         }
         return INSTANCE;
     }
-
 
     private static final RoomDatabase.Callback addDefaultValues = new RoomDatabase.Callback() {
         @Override
