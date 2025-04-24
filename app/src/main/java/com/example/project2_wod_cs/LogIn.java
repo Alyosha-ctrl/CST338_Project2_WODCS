@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import com.example.project2_wod_cs.Database.AppDataRepository;
+import com.example.project2_wod_cs.Database.UserDAO;
 import com.example.project2_wod_cs.Database.entities.User;
 import com.example.project2_wod_cs.databinding.ActivityLogInBinding;
 
@@ -46,6 +47,7 @@ public class LogIn extends AppCompatActivity {
         });
     }
 
+    @Deprecated
     private boolean getInformationFromDisplay(){
         username = binding.UsernameInputEditText.getText().toString();
         password = binding.PasswordInputEditText.getText().toString();
@@ -59,7 +61,7 @@ public class LogIn extends AppCompatActivity {
     }
 
     private void verifyUser() {
-        String username = binding.UsernameInputEditText.getText().toString();
+        username = binding.UsernameInputEditText.getText().toString();
         if(username.isEmpty()){
             toastMaker("Username may not be blank");
             return;
@@ -70,7 +72,9 @@ public class LogIn extends AppCompatActivity {
                 String password = binding.PasswordInputEditText.getText().toString();
                 if(password.equals(user.getPassword())){
                     toastMaker("Login Success");
-                    startActivity(MainActivity.mainActivityIntentFactory(getApplicationContext(), user.getId()));
+                    Intent intent = LandingPage.landingPageIntentFactory(getApplicationContext(), user.getUsername());
+                    startActivity(intent);
+//                    startActivity(MainActivity.getMainActivityIntentFactory(getApplicationContext(), user.getId()));
                 }
                 else{
                     toastMaker("Invalid Password");
