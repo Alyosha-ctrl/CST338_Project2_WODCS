@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Toast;
 
@@ -34,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         repository = AppDataRepository.getRepository(getApplication());
         loginUser(savedInstanceState);
+
+        invalidateOptionsMenu();
 
         if(loggedInUserId == LOGGED_OUT){
             Intent intent = LogIn.loginIntentFactory((getApplicationContext()));
@@ -87,12 +91,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-private void logOut(){
-    loggedInUserId = LOGGED_OUT;
-    updateSharedPreference();
-    getIntent().putExtra(MAIN_ACTIVITY_USER_ID, LOGGED_OUT);
-    startActivity(LogIn.loginIntentFactory(getApplicationContext()));
-}
+    private void logOut(){
+        loggedInUserId = LOGGED_OUT;
+        updateSharedPreference();
+        getIntent().putExtra(MAIN_ACTIVITY_USER_ID, LOGGED_OUT);
+        startActivity(LogIn.loginIntentFactory(getApplicationContext()));
+    }
 
     private void updateSharedPreference() {
         SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
