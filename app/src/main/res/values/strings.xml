@@ -16,4 +16,6 @@
     <string name="preference_userId_key">WODCSUserIdPreferencesKey</string>
     <string name="preference_file_key">WODCSPreferencesFileName</string>
     <string name="logout">Logout</string>
+    <string name="return_to_main_page">Return To Main Page</string>
+    <string name="wodcs_sign_up">WODCS Sign Up</string>
 </resources>
