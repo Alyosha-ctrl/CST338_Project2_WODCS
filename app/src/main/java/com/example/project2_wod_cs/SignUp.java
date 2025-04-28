@@ -11,6 +11,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.project2_wod_cs.Database.AppDataRepository;
+import com.example.project2_wod_cs.Database.UserDAO;
+import com.example.project2_wod_cs.Database.entities.User;
 import com.example.project2_wod_cs.databinding.ActivityLogInBinding;
 import com.example.project2_wod_cs.databinding.ActivitySignUpBinding;
 
@@ -35,11 +37,14 @@ public class SignUp extends AppCompatActivity {
         binding.SignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getInformationFromDisplay();
+                if(getInformationFromDisplay()){
+                        User storyTeller = new User(username,password);
+                        storyTeller.setStoryTeller(true);
+                        repository.insertUser(storyTeller);
+                }
             }
         });
     }
-
     private boolean getInformationFromDisplay(){
         username = binding.UsernameInputEditText.getText().toString();
         password = binding.PasswordInputEditText.getText().toString();
