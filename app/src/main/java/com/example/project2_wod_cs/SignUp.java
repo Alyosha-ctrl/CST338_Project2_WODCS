@@ -1,5 +1,7 @@
 package com.example.project2_wod_cs;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -25,7 +27,7 @@ public class SignUp extends AppCompatActivity {
     private String username = "";
     private String password = "";
     private String passwordAgain = "";
-    private boolean isStoryTeller;
+    private boolean isStoryTeller = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +53,17 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
-//        binding.isStoryTellerCheckBox.setOnCheckedChangeListener();
+        binding.isStoryTellerCheckBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(binding.isStoryTellerCheckBox.isChecked()){
+                    isStoryTeller = true;
+                }else{
+                    isStoryTeller = false;
+                }
+            }
+        });
+
     }
     private boolean getInformationFromDisplay(){
         username = binding.UsernameInputEditText.getText().toString();
