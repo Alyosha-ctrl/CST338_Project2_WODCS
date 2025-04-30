@@ -25,6 +25,7 @@ public class SignUp extends AppCompatActivity {
     private String username = "";
     private String password = "";
     private String passwordAgain = "";
+    private boolean isStoryTeller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +39,14 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(getInformationFromDisplay()){
-                        User storyTeller = new User(username,password);
-                        storyTeller.setStoryTeller(true);
-                        repository.insertUser(storyTeller);
+                        User newUser = new User(username,password);
+                        try {
+                            newUser.setStoryTeller(isStoryTeller);
+                        } catch (Exception e) {
+                            //If no isStoryTeller is called makes it false by default
+                            newUser.setStoryTeller(false);
+                        }
+                        repository.insertUser(newUser);
                 }
             }
         });
