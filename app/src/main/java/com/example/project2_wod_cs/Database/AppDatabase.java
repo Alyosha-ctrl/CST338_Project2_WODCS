@@ -1,6 +1,7 @@
 package com.example.project2_wod_cs.Database;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
@@ -41,6 +42,7 @@ public abstract class AppDatabase extends RoomDatabase {
         }
         return INSTANCE;
     }
+
 
     private static final RoomDatabase.Callback addDefaultValues = new RoomDatabase.Callback() {
         @Override

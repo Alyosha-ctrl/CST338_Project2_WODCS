@@ -42,7 +42,7 @@ public class LogIn extends AppCompatActivity {
         binding.SignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toastMaker("No Sign Up Functionality Yet");
+                startActivity(SignUp.signUpIntentFactory(getApplicationContext()));
             }
         });
     }
@@ -51,7 +51,7 @@ public class LogIn extends AppCompatActivity {
     private boolean getInformationFromDisplay(){
         username = binding.UsernameInputEditText.getText().toString();
         password = binding.PasswordInputEditText.getText().toString();
-        passwordAgain = binding.PasswordAgainInputEditText.getText().toString();
+        //passwordAgain = binding.PasswordAgainInputEditText.getText().toString();
         if(password.equals(passwordAgain)){
             toastMaker("Successfully Entered Log In Information");
             return true;

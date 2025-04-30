@@ -22,7 +22,6 @@ public class AppDataRepository {
     private AppDataRepository(Application application){
         AppDatabase db = AppDatabase.getDatabase(application);
         this.userDAO = db.userDAO();
-
     }
 
     public  static AppDataRepository getRepository(Application application){
