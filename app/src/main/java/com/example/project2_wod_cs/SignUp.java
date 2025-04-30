@@ -50,6 +50,8 @@ public class SignUp extends AppCompatActivity {
                 }
             }
         });
+
+//        binding.isStoryTellerCheckBox.setOnCheckedChangeListener();
     }
     private boolean getInformationFromDisplay(){
         username = binding.UsernameInputEditText.getText().toString();
