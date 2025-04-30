@@ -51,7 +51,7 @@ public class LogIn extends AppCompatActivity {
     private boolean getInformationFromDisplay(){
         username = binding.UsernameInputEditText.getText().toString();
         password = binding.PasswordInputEditText.getText().toString();
-        passwordAgain = binding.PasswordAgainInputEditText.getText().toString();
+        //passwordAgain = binding.PasswordAgainInputEditText.getText().toString();
         if(password.equals(passwordAgain)){
             toastMaker("Successfully Entered Log In Information");
             return true;
