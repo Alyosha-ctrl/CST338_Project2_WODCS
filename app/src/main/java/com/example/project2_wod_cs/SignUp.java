@@ -37,21 +37,7 @@ public class SignUp extends AppCompatActivity {
 
         repository = AppDataRepository.getRepository(getApplication());
 
-        binding.SignUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(getInformationFromDisplay()){
-                        User newUser = new User(username,password);
-                        try {
-                            newUser.setStoryTeller(isStoryTeller);
-                        } catch (Exception e) {
-                            //If no isStoryTeller is called makes it false by default
-                            newUser.setStoryTeller(false);
-                        }
-                        repository.insertUser(newUser);
-                }
-            }
-        });
+
 
         binding.isStoryTellerCheckBox.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +47,29 @@ public class SignUp extends AppCompatActivity {
                 }else{
                     isStoryTeller = false;
                 }
+            }
+        });
+
+        binding.SignUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(getInformationFromDisplay()){
+                    User newUser = new User(username,password);
+                    try {
+                        newUser.setStoryTeller(isStoryTeller);
+                    } catch (Exception e) {
+                        //If no isStoryTeller is called makes it false by default
+                        newUser.setStoryTeller(false);
+                    }
+                    repository.insertUser(newUser);
+                }
+            }
+        });
+
+        binding.ReturnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(LogIn.loginIntentFactory(getApplicationContext()));
             }
         });
 

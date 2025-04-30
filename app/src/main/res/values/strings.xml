@@ -18,4 +18,6 @@
     <string name="logout">Logout</string>
     <string name="return_to_main_page">Return To Main Page</string>
     <string name="wodcs_sign_up">WODCS Sign Up</string>
+    <string name="go_to_log_in">Go To Log In</string>
+    <string name="are_you_a_storyteller">Are You A StoryTeller</string>
 </resources>
