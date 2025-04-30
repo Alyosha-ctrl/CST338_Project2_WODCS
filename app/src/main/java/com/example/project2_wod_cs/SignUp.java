@@ -80,4 +80,9 @@ public class SignUp extends AppCompatActivity {
     private void toastMaker(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+
+
+    public static Intent signUpIntentFactory(Context context){
+        return new Intent(context, SignUp.class);
+    }
 }

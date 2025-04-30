@@ -42,7 +42,7 @@ public class LogIn extends AppCompatActivity {
         binding.SignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toastMaker("No Sign Up Functionality Yet");
+                startActivity(SignUp.signUpIntentFactory(getApplicationContext()));
             }
         });
     }
