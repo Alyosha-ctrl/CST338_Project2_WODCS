@@ -1,14 +1,29 @@
 package com.example.project2_wod_cs.Database.entities;
 
+import androidx.room.Embedded;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
+import androidx.room.Relation;
 
 import com.example.project2_wod_cs.Database.AppDatabase;
 
-@Entity(tableName = AppDatabase.CHARACTER_SHEET_TABLE)
+import java.util.List;
+
+@Entity(tableName = AppDatabase.CHARACTER_SHEET_TABLE,
+        foreignKeys =
+                {@ForeignKey(
+                        entity = User.class,
+                        parentColumns = "id", //Pulls the User.java id field as the key to relate this table to
+                        childColumns = "ownerId")}, //Curly braces because it stores the info in an array
+                indices = @Index("ownerId") )
+
 public class CharacterSheet {
     @PrimaryKey(autoGenerate = true)
     private int id;
+
+    private int ownerId;//needs to be set to the User id that owns the sheet
 
     // General Character Sheet Info
     //Labels
@@ -75,6 +90,203 @@ public class CharacterSheet {
     private boolean isMage;
     private boolean isWereWolf;
     private boolean isHunter;
+
+    //Character Attributes
+
+        //Physical
+    private int strengthScore;
+    private int dexterityScore;
+    private int staminaScore;
+
+        //Social
+    private int charismaScore;
+    private int manipulationScore;
+    private int appearanceScore;
+
+        //Mental
+    private int perceptionScore;
+    private int intelligenceScore;
+    private int witsScore;
+
+        //Other
+    //All
+    private int currentWillRating;
+    private int maxWillRating;
+    private int healthRating;
+    //Vampire
+    private int humanityRating;
+    private int bloodPoolRating;
+    //Hunter
+    private int convictionRating;
+    //Mage
+    private int areteRating;
+    private int quintescenceRating;
+    private int straitsRating;
+
+    public CharacterSheet(String characterName, int ownerId){
+        this.characterName = characterName;
+        this.ownerId = ownerId;
+    }
+
+    //Inner class because I don't want to make a whole new file for the relational POJO
+    public static class UserWithCharacterSheets{
+        @Embedded
+        public User user;
+        @Relation(parentColumn = "id", entityColumn = "ownerId")
+        public List<CharacterSheet> characterSheets;
+    }
+
+    public int getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(int ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    public int getStrengthScore() {
+        return strengthScore;
+    }
+
+    public void setStrengthScore(int strengthScore) {
+        this.strengthScore = strengthScore;
+    }
+
+    public int getDexterityScore() {
+        return dexterityScore;
+    }
+
+    public void setDexterityScore(int dexterityScore) {
+        this.dexterityScore = dexterityScore;
+    }
+
+    public int getStaminaScore() {
+        return staminaScore;
+    }
+
+    public void setStaminaScore(int staminaScore) {
+        this.staminaScore = staminaScore;
+    }
+
+    public int getCharismaScore() {
+        return charismaScore;
+    }
+
+    public void setCharismaScore(int charismaScore) {
+        this.charismaScore = charismaScore;
+    }
+
+    public int getManipulationScore() {
+        return manipulationScore;
+    }
+
+    public void setManipulationScore(int manipulationScore) {
+        this.manipulationScore = manipulationScore;
+    }
+
+    public int getAppearanceScore() {
+        return appearanceScore;
+    }
+
+    public void setAppearanceScore(int appearanceScore) {
+        this.appearanceScore = appearanceScore;
+    }
+
+    public int getPerceptionScore() {
+        return perceptionScore;
+    }
+
+    public void setPerceptionScore(int perceptionScore) {
+        this.perceptionScore = perceptionScore;
+    }
+
+    public int getIntelligenceScore() {
+        return intelligenceScore;
+    }
+
+    public void setIntelligenceScore(int intelligenceScore) {
+        this.intelligenceScore = intelligenceScore;
+    }
+
+    public int getWitsScore() {
+        return witsScore;
+    }
+
+    public void setWitsScore(int witsScore) {
+        this.witsScore = witsScore;
+    }
+
+    public int getCurrentWillRating() {
+        return currentWillRating;
+    }
+
+    public void setCurrentWillRating(int currentWillRating) {
+        this.currentWillRating = currentWillRating;
+    }
+
+    public int getMaxWillRating() {
+        return maxWillRating;
+    }
+
+    public void setMaxWillRating(int maxWillRating) {
+        this.maxWillRating = maxWillRating;
+    }
+
+    public int getHealthRating() {
+        return healthRating;
+    }
+
+    public void setHealthRating(int healthRating) {
+        this.healthRating = healthRating;
+    }
+
+    public int getHumanityRating() {
+        return humanityRating;
+    }
+
+    public void setHumanityRating(int humanityRating) {
+        this.humanityRating = humanityRating;
+    }
+
+    public int getBloodPoolRating() {
+        return bloodPoolRating;
+    }
+
+    public void setBloodPoolRating(int bloodPoolRating) {
+        this.bloodPoolRating = bloodPoolRating;
+    }
+
+    public int getConvictionRating() {
+        return convictionRating;
+    }
+
+    public void setConvictionRating(int convictionRating) {
+        this.convictionRating = convictionRating;
+    }
+
+    public int getAreteRating() {
+        return areteRating;
+    }
+
+    public void setAreteRating(int areteRating) {
+        this.areteRating = areteRating;
+    }
+
+    public int getQuintescenceRating() {
+        return quintescenceRating;
+    }
+
+    public void setQuintescenceRating(int quintescenceRating) {
+        this.quintescenceRating = quintescenceRating;
+    }
+
+    public int getStraitsRating() {
+        return straitsRating;
+    }
+
+    public void setStraitsRating(int straitsRating) {
+        this.straitsRating = straitsRating;
+    }
 
     public String getCharacterName() {
         return characterName;
