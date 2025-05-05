@@ -6,6 +6,7 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.room.Insert;
 
+import com.example.project2_wod_cs.Database.entities.CharacterSheet;
 import com.example.project2_wod_cs.Database.entities.User;
 
 import java.util.ArrayList;
@@ -16,12 +17,14 @@ import java.util.concurrent.Future;
 public class AppDataRepository {
     private ArrayList<User> allUsers;
     private UserDAO userDAO;
+    private CharacterSheetDAO characterSheetDAO;
 
     private static AppDataRepository repository;
 
     private AppDataRepository(Application application){
         AppDatabase db = AppDatabase.getDatabase(application);
         this.userDAO = db.userDAO();
+        this.characterSheetDAO = db.characterSheetDAO();
     }
 
     public  static AppDataRepository getRepository(Application application){
@@ -39,11 +42,12 @@ public class AppDataRepository {
         try{
             return future.get();
         } catch (ExecutionException | InterruptedException e) {
-            Log.d("ourapp", "Problem getting GymLogRepository, thread error.");
+            Log.d("ourapp", "Problem getting AppDataRepository, thread error.");
         }
 
         return null;
     }
+
 
     public ArrayList<User> getAllUsers() {
         return allUsers;
@@ -62,5 +66,11 @@ public class AppDataRepository {
 
     public LiveData<User> getUserByUserId(int userId) {
         return userDAO.getUserByUserId(userId);
+    }
+
+    public void insertSheetForUser(CharacterSheet sheet, User user){
+        AppDatabase.databaseWriteExecutor.execute(()->{
+            characterSheetDAO.insert(sheet);
+        });
     }
 }
