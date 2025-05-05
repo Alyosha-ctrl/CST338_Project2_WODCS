@@ -73,4 +73,8 @@ public class AppDataRepository {
             characterSheetDAO.insert(sheet);
         });
     }
+
+    public LiveData<CharacterSheet.UserWithCharacterSheets> getUserWithSheets(int userId){
+        return userDAO.getUserWithCharacterSheets(userId);
+    }
 }
