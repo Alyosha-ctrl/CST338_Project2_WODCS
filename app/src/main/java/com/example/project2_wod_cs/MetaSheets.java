@@ -33,7 +33,7 @@ public class MetaSheets extends AppCompatActivity {
     }
 
     static Intent metaSheetsIntentFactory(Context context, String username){
-        Intent intent = new Intent(context, LandingPage.class);
+        Intent intent = new Intent(context, MetaSheets.class);
         intent.putExtra(USERNAME_KEY, username);
         return intent;
     }
