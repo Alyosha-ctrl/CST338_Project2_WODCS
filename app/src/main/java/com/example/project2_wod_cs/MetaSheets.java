@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.project2_wod_cs.Database.AppDataRepository;
+import com.example.project2_wod_cs.Database.entities.CharacterSheet;
 import com.example.project2_wod_cs.Database.entities.User;
 import com.example.project2_wod_cs.databinding.ActivityMetaSheetsBinding;
 
