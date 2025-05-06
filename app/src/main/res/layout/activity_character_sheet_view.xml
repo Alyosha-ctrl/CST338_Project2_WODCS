@@ -32,6 +32,7 @@
                 android:layout_height="0dp"
                 android:orientation="horizontal"
                 android:padding="8dp"
+                android:gravity="center"
                 android:layout_marginTop="8dp"
                 android:layout_weight="3">
 
@@ -68,7 +69,7 @@
                     android:id="@+id/SheetDependentTextView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
+                    android:layout_marginStart="8dp"
                     android:text="@string/blankspace"
                     android:textSize="16sp"/>
 
@@ -86,6 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
+                android:gravity="center"
                 android:padding="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="3">
@@ -123,7 +125,7 @@
                     android:id="@+id/SheetDependentTextView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
+                    android:layout_marginStart="8dp"
                     android:text="@string/blankspace"
                     android:textSize="16sp"/>
 
@@ -141,6 +143,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
+                android:gravity="center"
                 android:padding="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="3">
@@ -178,7 +181,7 @@
                     android:id="@+id/SheetDependentTextView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
+                    android:layout_marginStart="8dp"
                     android:text="@string/blankspace"
                     android:textSize="16sp"/>
 
@@ -189,6 +192,206 @@
                         android:text="@string/blankspace"
                         android:textSize="16sp"
                         android:layout_marginEnd="8dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/AttributesTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/attributes"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/physical"
+                        android:textSize="16sp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="36dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sociallabel"
+                        android:textSize="16sp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mental"
+                        android:textSize="16sp"
+                        android:paddingLeft="36dp"
+                        android:paddingRight="8dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/strength"
+                        android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/SheetViewStrengthDisplayTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/blankspace"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/charisma"
+                        android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/SheetViewCharismaDisplayTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/blankspace"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/perception"
+                        android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/SheetViewPerceptionDisplayTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/blankspace"
+                            android:textSize="14sp"
+                            android:layout_marginEnd="4dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dexterity"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/SheetViewDexterityDisplayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:text="@string/blankspace"
+                        android:textSize="14sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/manipulation"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/SheetViewManipulationDisplayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:text="@string/blankspace"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/intelligence"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/SheetViewIntelligenceDisplayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:text="@string/blankspace"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stamina"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/SheetViewStaminaDisplayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/appearance"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/SheetViewAppearanceDisplayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/wits"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/SheetViewWitsDisplayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="4dp"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 

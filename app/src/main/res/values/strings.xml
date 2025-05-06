@@ -30,4 +30,18 @@
     <string name="nature">Nature:</string>
     <string name="demeanor">Demeanor:</string>
     <string name="concept">Concept:</string>
+    <string name="attributes">Attributes</string>
+    <string name="physical">Physical</string>
+    <string name="social">Social</string>
+    <string name="sociallabel">Social</string>
+    <string name="mental">Mental</string>
+    <string name="strength">Strength: </string>
+    <string name="charisma">Charisma: </string>
+    <string name="perception">Perception: </string>
+    <string name="wits">Wits: </string>
+    <string name="manipulation">Manipulation:</string>
+    <string name="stamina">Stamina:</string>
+    <string name="intelligence">Intelligence:</string>
+    <string name="appearance">Appearance:</string>
+    <string name="dexterity">Dexterity:</string>
 </resources>

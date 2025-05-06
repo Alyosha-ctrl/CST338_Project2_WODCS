@@ -74,6 +74,14 @@ public class AppDataRepository {
         });
     }
 
+    public LiveData<CharacterSheet> getSheetByCharacterName(String characterName){
+        return characterSheetDAO.getSheetByCharacterName(characterName);
+    }
+
+    public LiveData<CharacterSheet> getSheetByOwnerId(int ownerId){
+        return  characterSheetDAO.getSheetByOwnerId(ownerId);
+    }
+
     public LiveData<CharacterSheet.UserWithCharacterSheets> getUserWithSheets(int userId){
         return userDAO.getUserWithCharacterSheets(userId);
     }
