@@ -26,12 +26,35 @@ public class ExampleInstrumentedTest {
         assertEquals("com.example.project2_wod_cs", appContext.getPackageName());
     }
 
+    //Alexey "Azriel" Berezhnoy's Activity Intent Factory Tests
     @Test
     public void logInIntentFactory() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         Intent intent = LogIn.loginIntentFactory((appContext));
-        startActivity(intent);
-        assertEquals(LogIn.class, getClass());
+        assertEquals(LogIn.class.getName(), intent.getComponent().getClassName());
     }
+
+    @Test
+    public void signUpIntentFactory() {
+        // Context of the app under test.
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        Intent intent = SignUp.signUpIntentFactory(appContext);
+        assertEquals(SignUp.class.getName(), intent.getComponent().getClassName());
+    }
+
+    @Test
+    public void metaSheetsIntentFactory() {
+        // Context of the app under test.
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        String exampleName="goober";
+        Intent intent = MetaSheets.metaSheetsIntentFactory(appContext, exampleName);
+        assertEquals(MetaSheets.class.getName(), intent.getComponent().getClassName());
+        assertEquals(exampleName, intent.getStringExtra(MetaSheets.USERNAME_KEY));
+    }
+
+    //Nikolii Proud's Activity Intent Factory Tests
+
+    //Antonio Barron's Activity Intent Factory Tests
+
 }
