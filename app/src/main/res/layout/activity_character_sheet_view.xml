@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityCharacterSheetView">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/SheetTypeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sheettype"
+                android:layout_gravity="center"
+                android:textSize="24sp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/SheetViewSheetNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/playerSheetName"
+                    android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/SheetNameDisplayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/SheetNatureTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/nature"
+                    android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/SheetNatureDisplayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/SheetDependentTextView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/blankspace"
+                    android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/SheetDependentDisplayTextView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/SheetViewPlayerNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/PlayerNameDisplayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/SheetViewDemeanorTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/demeanor"
+                    android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/SheetViewDemeanorDisplayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/SheetDependentTextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/blankspace"
+                    android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/SheetDependentDisplayTextView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/SheetViewChronicleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chronicle"
+                    android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/SheetChronicleDisplayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/SheetViewConceptTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/concept"
+                    android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/SheetViewConceptDisplayTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/SheetDependentTextView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/blankspace"
+                    android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/SheetDependentDisplayTextView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

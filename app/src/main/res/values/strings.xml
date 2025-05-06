@@ -20,4 +20,14 @@
     <string name="wodcs_sign_up">WODCS Sign Up</string>
     <string name="go_to_log_in">Go To Log In</string>
     <string name="are_you_a_storyteller">Are You A StoryTeller</string>
+    <string name="welcome">Welcome</string>
+    <string name="sheettype">Sheet Type</string>
+    <string name="name">Name:</string>
+    <string name="playerSheetName">Player:</string>
+    <string name="chronicle">Chronicle:</string>
+    <string name="textspacefiller">-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-</string>
+    <string name="blankspace">______</string>
+    <string name="nature">Nature:</string>
+    <string name="demeanor">Demeanor:</string>
+    <string name="concept">Concept:</string>
 </resources>
