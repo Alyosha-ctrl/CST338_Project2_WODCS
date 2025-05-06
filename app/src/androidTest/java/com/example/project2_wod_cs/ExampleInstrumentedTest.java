@@ -1,6 +1,8 @@
 package com.example.project2_wod_cs;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -22,5 +24,14 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.example.project2_wod_cs", appContext.getPackageName());
+    }
+
+    @Test
+    public void logInIntentFactory() {
+        // Context of the app under test.
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        Intent intent = LogIn.loginIntentFactory((appContext));
+        startActivity(intent);
+        assertEquals(LogIn.class, getClass());
     }
 }
