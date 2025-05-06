@@ -3,13 +3,13 @@ package com.example.project2_wod_cs;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.lifecycle.Observer;
 
 import com.example.project2_wod_cs.Database.AppDataRepository;
 import com.example.project2_wod_cs.Database.entities.User;
@@ -26,6 +26,8 @@ public class MetaSheets extends AppCompatActivity {
     private AppDataRepository repository;
     private String username = "";
 
+    private String destination = "hnv-9uwahgas";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,10 +37,22 @@ public class MetaSheets extends AppCompatActivity {
         repository = AppDataRepository.getRepository(getApplication());
         username = getIntent().getStringExtra(USERNAME_KEY);
 
-        repository.getUserByUserName(username).observe(this, new Observer<User>() {
+        String [] names = {"String", "Bloodsucker", "Stabber"};
+        //A method to turn whats in the user to a list of names.
+
+        Spinner spinner = binding.sheetDropDown;
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, names);
+        spinner.setAdapter(arrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onChanged(User user) {
-                user.get
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //Gets the destination
+                destination = names[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
     }
@@ -47,5 +61,13 @@ public class MetaSheets extends AppCompatActivity {
         Intent intent = new Intent(context, MetaSheets.class);
         intent.putExtra(USERNAME_KEY, username);
         return intent;
+    }
+
+    private void startSheet(String sheetName){
+        toastMaker("Cannot get to sheet " + sheetName + ". It does not currently exist");
+    }
+
+    private void toastMaker(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
