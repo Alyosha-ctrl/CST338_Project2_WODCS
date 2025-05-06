@@ -21,7 +21,7 @@ public class MetaSheets extends AppCompatActivity {
 
     public static final String USERNAME_KEY = "user_id";
 
-    private User userWithCharacterSheets;
+    private String [] names = {"String", "Bloodsucker", "Stabber", "Bastard",};
 
     private AppDataRepository repository;
     private String username = "";
@@ -37,8 +37,9 @@ public class MetaSheets extends AppCompatActivity {
         repository = AppDataRepository.getRepository(getApplication());
         username = getIntent().getStringExtra(USERNAME_KEY);
 
-        String [] names = {"String", "Bloodsucker", "Stabber"};
         //A method to turn whats in the user to a list of names.
+        getSheetNameList();
+
 
         Spinner spinner = binding.sheetDropDown;
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, names);
@@ -55,6 +56,13 @@ public class MetaSheets extends AppCompatActivity {
 
             }
         });
+
+        binding.sheetGoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startSheet(destination);
+            }
+        });
     }
 
     static Intent metaSheetsIntentFactory(Context context, String username){
@@ -64,10 +72,17 @@ public class MetaSheets extends AppCompatActivity {
     }
 
     private void startSheet(String sheetName){
-        toastMaker("Cannot get to sheet " + sheetName + ". It does not currently exist");
+        if(destination.equals("hnv-9uwahgas")){
+            toastMaker("To Move On Requires You to Choose An Option");
+        }
+        toastMaker("Cannot get to sheet " + sheetName + ".\nIt does not currently exist");
     }
 
     private void toastMaker(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void getSheetNameList(){
+        toastMaker("Currently Does Nothing");
     }
 }
