@@ -1,5 +1,7 @@
 package com.example.project2_wod_cs;
 
+import static com.example.project2_wod_cs.MainActivity.LOGGED_OUT;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -61,6 +63,13 @@ public class MetaSheets extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startSheet(destination);
+            }
+        });
+
+        binding.returnToLandingPageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(LandingPage.landingPageIntentFactory(getApplicationContext(), username));
             }
         });
     }
