@@ -74,9 +74,7 @@ public class LandingPage extends AppCompatActivity {
             }
         });
 
-
-        username = "Welcome " + username;
-        binding.welcomeText.setText(username);
+        binding.welcomeText.setText("Welcome " + username);
     }
 
 
@@ -88,7 +86,7 @@ public class LandingPage extends AppCompatActivity {
     }
 
     private void startPlayer(){
-        Toast.makeText(LandingPage.this, "Player Not Currently Implemented", Toast.LENGTH_LONG).show();
+        startActivity(MetaSheets.metaSheetsIntentFactory(getApplicationContext(), username));
     }
 
     //Comment here so I can push stuff.
