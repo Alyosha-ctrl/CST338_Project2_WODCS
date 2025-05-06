@@ -23,4 +23,5 @@
     <string name="sheets">Sheets</string>
     <string name="go">Go</string>
     <string name="return_to_home">Return To Home Page</string>
+    <string name="enter_character_name">Enter Character Name</string>
 </resources>

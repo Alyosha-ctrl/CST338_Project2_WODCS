@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -43,19 +44,13 @@ public class MetaSheets extends AppCompatActivity {
         getSheetNameList();
 
 
-        Spinner spinner = binding.sheetDropDown;
+        AutoCompleteTextView spinner = binding.autoCompleteText;
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, names);
         spinner.setAdapter(arrayAdapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //Gets the destination
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 destination = names[position];
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
 
@@ -83,6 +78,7 @@ public class MetaSheets extends AppCompatActivity {
     private void startSheet(String sheetName){
         if(destination.equals("hnv-9uwahgas")){
             toastMaker("To Move On Requires You to Choose An Option");
+            return;
         }
         toastMaker("Cannot get to sheet " + sheetName + ".\nIt does not currently exist");
     }
