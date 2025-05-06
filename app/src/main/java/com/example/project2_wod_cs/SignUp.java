@@ -62,6 +62,7 @@ public class SignUp extends AppCompatActivity {
                         newUser.setStoryTeller(false);
                     }
                     repository.insertUser(newUser);
+                    startActivity(LogIn.loginIntentFactory(getApplicationContext()));
                 }
             }
         });
@@ -79,7 +80,7 @@ public class SignUp extends AppCompatActivity {
         password = binding.PasswordInputEditText.getText().toString();
         passwordAgain = binding.PasswordAgainInputEditText.getText().toString();
         if(password.equals(passwordAgain)){
-            toastMaker("Successfully Entered Log In Information");
+            toastMaker("Successfully Entered Sign Up Information");
             return true;
         }
         toastMaker("Password, Not Equal to Password Again");
