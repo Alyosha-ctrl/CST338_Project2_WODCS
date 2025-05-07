@@ -58,10 +58,10 @@ public class ButtonRoll extends AppCompatActivity{
         int number;
         StringBuilder result = new StringBuilder();
         Random random = new Random();
-        for(int i = 0; i <= diceAmount; i++){
+        for(int i = 0; i < diceAmount; i++){
             //loop that appends a random number to the display string
             number = random.nextInt(11);
-            result.append(random);
+            result.append(number);
             result.append(" ");
         }
 
