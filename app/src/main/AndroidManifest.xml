@@ -16,17 +16,10 @@
             android:name=".ActivityCharacterSheetView"
             android:exported="false" />
         <activity
-            android:name=".Database.CharacterSheetMenu"
-            android:exported="false" />
-        <activity
-            android:name=".CharacterSheetMenu"
-            android:exported="false" />
-        <activity
             android:name=".CharacterSheetBuilderActivity"
             android:exported="false" />
         <activity
             android:name=".MetaSheets"
-            android:exported="false" />
             android:exported="false" />
         <activity
             android:name=".SignUp"
@@ -37,6 +30,8 @@
         <activity
             android:name=".LandingPage"
             android:exported="false" />
+        <activity android:name=".ButtonRoll"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

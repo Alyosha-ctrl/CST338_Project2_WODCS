@@ -40,6 +40,7 @@ public class ButtonRoll extends AppCompatActivity{
     }
 
     private int getDiceAmount (){
+        //returns the amount of dice to roll as an int
         try{
             diceAmount = Integer.parseInt(binding.diceAmountEditText.getText().toString());
         } catch (NumberFormatException e) {
@@ -53,22 +54,27 @@ public class ButtonRoll extends AppCompatActivity{
     static Intent buttonRollIntentFactory(Context context){return new Intent(context, ButtonRoll.class);};
 
     private String rollDice (int diceAmount){
+        //random number generator
         int number;
         StringBuilder result = new StringBuilder();
         Random random = new Random();
-        for(int i = 0; i <= diceAmount; i++){
+        for(int i = 0; i < diceAmount; i++){
+            //loop that appends a random number to the display string
             number = random.nextInt(11);
-            result.append(random);
+            result.append(number);
             result.append(" ");
         }
 
         return result.toString();
     }
 
+
     private void displayDice (){
+        //sets the TextView to the numbers rolled from the random number generator
         String display = rollDice(getDiceAmount());
         binding.diceDisplayTextView.setText(display);
     }
 }
+
 
 

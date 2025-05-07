@@ -75,6 +75,15 @@ public class LandingPage extends AppCompatActivity {
         });
 
         binding.welcomeText.setText("Welcome " + username);
+
+        binding.diceButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = ButtonRoll.buttonRollIntentFactory(getApplicationContext());
+                startActivity(intent);
+            }
+        });
+
     }
 
 
