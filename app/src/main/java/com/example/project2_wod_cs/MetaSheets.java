@@ -93,11 +93,12 @@ public class MetaSheets extends AppCompatActivity {
             toastMaker("To Move On Requires You to Choose An Option");
             return;
         }
+        startActivity(ActivityCharacterSheetView.activityCharacterSheetViewIntentFactory(getApplicationContext()));
         toastMaker("Cannot get to sheet " + destination + ".\nThe sheet activity does not currently exist");
     }
 
     private void startSheetBuilder(){
-        toastMaker("SheetBuilder Not Currently Connected");
+        startActivity(CharacterSheetBuilderActivity.characterSheetBuilderActivityIntentFactory(getApplicationContext()));
     }
 
     private void toastMaker(String message) {
