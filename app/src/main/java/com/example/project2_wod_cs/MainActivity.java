@@ -58,6 +58,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startSignUp(){
-        Toast.makeText(MainActivity.this, "Sign Up Not Currently Implemented", Toast.LENGTH_LONG).show();
+        startActivity(SignUp.signUpIntentFactory(getApplicationContext()));
     }
 }

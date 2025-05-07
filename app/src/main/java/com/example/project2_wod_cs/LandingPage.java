@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -75,9 +74,7 @@ public class LandingPage extends AppCompatActivity {
             }
         });
 
-
-        username = "Welcome " + username;
-        binding.welcomeText.setText(username);
+        binding.welcomeText.setText("Welcome " + username);
     }
 
 
@@ -89,7 +86,7 @@ public class LandingPage extends AppCompatActivity {
     }
 
     private void startPlayer(){
-        Toast.makeText(LandingPage.this, "Player Not Currently Implemented", Toast.LENGTH_LONG).show();
+        startActivity(MetaSheets.metaSheetsIntentFactory(getApplicationContext(), username));
     }
 
     //Comment here so I can push stuff.

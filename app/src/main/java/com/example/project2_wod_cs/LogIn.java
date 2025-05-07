@@ -2,6 +2,7 @@ package com.example.project2_wod_cs;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +24,7 @@ public class LogIn extends AppCompatActivity {
     private String username = "";
     private String password = "";
     private String passwordAgain = "";
+    private int loggedInUserId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +44,7 @@ public class LogIn extends AppCompatActivity {
         binding.SignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toastMaker("No Sign Up Functionality Yet");
+                startActivity(SignUp.signUpIntentFactory(getApplicationContext()));
             }
         });
     }
@@ -51,7 +53,7 @@ public class LogIn extends AppCompatActivity {
     private boolean getInformationFromDisplay(){
         username = binding.UsernameInputEditText.getText().toString();
         password = binding.PasswordInputEditText.getText().toString();
-        passwordAgain = binding.PasswordAgainInputEditText.getText().toString();
+        //passwordAgain = binding.PasswordAgainInputEditText.getText().toString();
         if(password.equals(passwordAgain)){
             toastMaker("Successfully Entered Log In Information");
             return true;
@@ -72,6 +74,7 @@ public class LogIn extends AppCompatActivity {
                 String password = binding.PasswordInputEditText.getText().toString();
                 if(password.equals(user.getPassword())){
                     toastMaker("Login Success");
+                    updateSharedPreference();
                     Intent intent = LandingPage.landingPageIntentFactory(getApplicationContext(), user.getUsername());
                     startActivity(intent);
 //                    startActivity(MainActivity.getMainActivityIntentFactory(getApplicationContext(), user.getId()));
@@ -91,6 +94,13 @@ public class LogIn extends AppCompatActivity {
 
     private void toastMaker(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void updateSharedPreference() {
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        SharedPreferences.Editor sharedPrefEditor = sharedPreferences.edit();
+        sharedPrefEditor.putInt(getString(R.string.preference_userId_key), loggedInUserId);
+        sharedPrefEditor.apply();
     }
 
     private void startLogIn(){

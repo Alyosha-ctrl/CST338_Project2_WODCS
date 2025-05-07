@@ -13,11 +13,30 @@
         android:theme="@style/Theme.Project2_WOD_CS"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityCharacterSheetView"
+            android:exported="false" />
+        <activity
+            android:name=".Database.CharacterSheetMenu"
+            android:exported="false" />
+        <activity
+            android:name=".CharacterSheetMenu"
+            android:exported="false" />
+        <activity
+            android:name=".CharacterSheetBuilderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MetaSheets"
+            android:exported="false" />
+            android:exported="false" />
+        <activity
+            android:name=".SignUp"
+            android:exported="false" />
+        <activity
             android:name=".LogIn"
             android:exported="false" />
         <activity
             android:name=".LandingPage"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
