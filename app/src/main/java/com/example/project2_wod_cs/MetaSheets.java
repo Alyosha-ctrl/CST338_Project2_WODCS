@@ -13,10 +13,16 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 
 import com.example.project2_wod_cs.Database.AppDataRepository;
+import com.example.project2_wod_cs.Database.entities.CharacterSheet;
 import com.example.project2_wod_cs.Database.entities.User;
 import com.example.project2_wod_cs.databinding.ActivityMetaSheetsBinding;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MetaSheets extends AppCompatActivity {
 
@@ -24,7 +30,7 @@ public class MetaSheets extends AppCompatActivity {
 
     public static final String USERNAME_KEY = "user_id";
 
-    private String [] names = {"String", "Bloodsucker", "Stabber", "Bastard",};
+    private ArrayList<String> names = new ArrayList<>();
 
     private AppDataRepository repository;
     private String username = "";
@@ -99,6 +105,10 @@ public class MetaSheets extends AppCompatActivity {
     }
 
     private void getSheetNameList(){
-        toastMaker("Currently Does Nothing");
+        names.clear();
+        names.add("Slinky the Magnificent");
+        names.add("Bloodsucker");
+        names.add("Begger");
+        names.add("Sucker");
     }
 }
