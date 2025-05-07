@@ -12,6 +12,8 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
+import java.util.Random;
+
 /**
  * Instrumented test, which will execute on an Android device.
  *
@@ -60,5 +62,15 @@ public class ExampleInstrumentedTest {
     //Nikolii Proud's Activity Intent Factory Tests
 
     //Antonio Barron's Activity Intent Factory Tests
+    @Test
+    public void landingPageIntentFactory(){
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        String exampleName="goober";
+        Intent intent = LandingPage.landingPageIntentFactory(appContext, exampleName);
+        Log.d(LOG_TAG, intent.getComponent().getClassName());
+        assertEquals(LogIn.class.getName(), intent.getComponent().getClassName());
+        assertEquals(exampleName, intent.getStringExtra(LandingPage.USERNAME_KEY));
+    }
+
 
 }
