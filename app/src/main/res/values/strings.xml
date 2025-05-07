@@ -44,4 +44,6 @@
     <string name="intelligence">Intelligence:</string>
     <string name="appearance">Appearance:</string>
     <string name="dexterity">Dexterity:</string>
+    <string name="willpower">Willpower</string>
+    <string name="health">Health</string>
 </resources>
