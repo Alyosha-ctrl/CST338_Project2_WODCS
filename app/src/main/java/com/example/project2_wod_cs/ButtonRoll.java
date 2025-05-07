@@ -30,21 +30,14 @@ public class ButtonRoll extends AppCompatActivity{
         binding = ActivityButtonRollBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-//        binding.rollButton.setOnClickListener(new View.OnClickListener() {
-//            for(i = 0; i >= diceAmount;
-//        });
-
         binding.rollButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getDiceAmount();
-                rollDice(diceAmount);
+                displayDice();
             }
         });
 
     }
-
-
 
     private int getDiceAmount (){
         try{
@@ -54,15 +47,27 @@ public class ButtonRoll extends AppCompatActivity{
         }
         if(diceAmount <= 0){
         }
+        return diceAmount;
     }
 
     static Intent buttonRollIntentFactory(Context context){return new Intent(context, ButtonRoll.class);};
 
-    private void rollDice (int number){
+    private String rollDice (int diceAmount){
+        int number;
+        StringBuilder result = new StringBuilder();
         Random random = new Random();
+        for(int i = 0; i <= diceAmount; i++){
+            number = random.nextInt(11);
+            result.append(random);
+            result.append(" ");
+        }
 
-        number = random.nextInt(1,7);
-        System.out.println(number);
+        return result.toString();
+    }
+
+    private void displayDice (){
+        String display = rollDice(getDiceAmount());
+        binding.diceDisplayTextView.setText(display);
     }
 }
 
