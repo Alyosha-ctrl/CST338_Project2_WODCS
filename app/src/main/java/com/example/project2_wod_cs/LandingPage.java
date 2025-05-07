@@ -47,6 +47,7 @@ public class LandingPage extends AppCompatActivity {
             public void onChanged(User user) {
                 if(user != null && user.isStoryTeller()){
                     binding.storytellerButton.setVisibility(View.VISIBLE);
+                    binding.playerButton.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -69,7 +70,7 @@ public class LandingPage extends AppCompatActivity {
         binding.storytellerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startStoryteller();
+                startPlayer();
             }
         });
 
