@@ -10,6 +10,7 @@ import androidx.room.Relation;
 import com.example.project2_wod_cs.Database.AppDatabase;
 
 import java.util.List;
+import java.util.Objects;
 
 @Entity(tableName = AppDatabase.CHARACTER_SHEET_TABLE,
         foreignKeys =
@@ -40,6 +41,7 @@ public class CharacterSheet {
     private String nature = "";
     private String demeanor = "";
     private String concept = "";
+    private int experience = 0;
 
     //Vampire Specific
     //Labels
@@ -142,6 +144,26 @@ public class CharacterSheet {
 
     public void setOwnerId(int ownerId) {
         this.ownerId = ownerId;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        CharacterSheet that = (CharacterSheet) o;
+        return id == that.id && ownerId == that.ownerId && experience == that.experience && isVampire == that.isVampire && isMage == that.isMage && isWereWolf == that.isWereWolf && isHunter == that.isHunter && strengthScore == that.strengthScore && dexterityScore == that.dexterityScore && staminaScore == that.staminaScore && charismaScore == that.charismaScore && manipulationScore == that.manipulationScore && appearanceScore == that.appearanceScore && perceptionScore == that.perceptionScore && intelligenceScore == that.intelligenceScore && witsScore == that.witsScore && currentWillRating == that.currentWillRating && maxWillRating == that.maxWillRating && healthRating == that.healthRating && humanityRating == that.humanityRating && bloodPoolRating == that.bloodPoolRating && convictionRating == that.convictionRating && areteRating == that.areteRating && quintescenceRating == that.quintescenceRating && straitsRating == that.straitsRating && Objects.equals(characterName, that.characterName) && Objects.equals(playerName, that.playerName) && Objects.equals(chronicle, that.chronicle) && Objects.equals(nature, that.nature) && Objects.equals(demeanor, that.demeanor) && Objects.equals(concept, that.concept) && Objects.equals(generation, that.generation) && Objects.equals(sire, that.sire) && Objects.equals(title, that.title) && Objects.equals(essence, that.essence) && Objects.equals(affiliation, that.affiliation) && Objects.equals(sect, that.sect) && Objects.equals(breed, that.breed) && Objects.equals(auspice, that.auspice) && Objects.equals(tribe, that.tribe) && Objects.equals(packName, that.packName) && Objects.equals(packTotem, that.packTotem) && Objects.equals(primaryVirtue, that.primaryVirtue) && Objects.equals(creed, that.creed) && Objects.equals(startingConviction, that.startingConviction);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, ownerId, characterName, playerName, chronicle, nature, demeanor, concept, experience, generation, sire, title, essence, affiliation, sect, breed, auspice, tribe, packName, packTotem, primaryVirtue, creed, startingConviction, isVampire, isMage, isWereWolf, isHunter, strengthScore, dexterityScore, staminaScore, charismaScore, manipulationScore, appearanceScore, perceptionScore, intelligenceScore, witsScore, currentWillRating, maxWillRating, healthRating, humanityRating, bloodPoolRating, convictionRating, areteRating, quintescenceRating, straitsRating);
     }
 
     public int getStrengthScore() {
