@@ -25,6 +25,10 @@
             android:name=".CharacterSheetBuilderActivity"
             android:exported="false" />
         <activity
+            android:name=".MetaSheets"
+            android:exported="false" />
+            android:exported="false" />
+        <activity
             android:name=".SignUp"
             android:exported="false" />
         <activity
