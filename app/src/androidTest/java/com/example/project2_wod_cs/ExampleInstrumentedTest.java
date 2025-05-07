@@ -72,5 +72,11 @@ public class ExampleInstrumentedTest {
         assertEquals(exampleName, intent.getStringExtra(LandingPage.USERNAME_KEY));
     }
 
-
+    @Test
+    public void buttonRollPageIntentFactory(){
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        Intent intent = ButtonRoll.buttonRollIntentFactory(appContext);
+        Log.d(LOG_TAG, intent.getComponent().getClassName());
+        assertEquals(ButtonRoll.class.getName(), intent.getComponent().getClassName());
+    }
 }
