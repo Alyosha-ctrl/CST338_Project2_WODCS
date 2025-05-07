@@ -125,8 +125,7 @@ public class CharacterSheet {
     private int quintescenceRating;
     private int straitsRating;
 
-    public CharacterSheet(String characterName, int ownerId){
-        this.characterName = characterName;
+    public CharacterSheet(int ownerId){
         this.ownerId = ownerId;
     }
 

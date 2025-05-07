@@ -23,11 +23,11 @@ public interface CharacterSheetDAO {
     void delete(CharacterSheet sheet);
 
     @Query("SELECT * FROM " + AppDatabase.CHARACTER_SHEET_TABLE + " ORDER BY characterName")
-    LiveData<ArrayList<CharacterSheet>> getAllSheets();
+    LiveData<List<CharacterSheet>> getAllSheets();
 
     @Query("SELECT * FROM " + AppDatabase.CHARACTER_SHEET_TABLE + " WHERE characterName == :characterName")
     LiveData<CharacterSheet> getSheetByCharacterName(String characterName);
 
     @Query("SELECT * FROM " + AppDatabase.CHARACTER_SHEET_TABLE + " WHERE  ownerId == :ownerId")
-    LiveData<CharacterSheet> getSheetByOwnerId(int ownerId);
+    LiveData<List<CharacterSheet>> getSheetByOwnerId(int ownerId);
 }

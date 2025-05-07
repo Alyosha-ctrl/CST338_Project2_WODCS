@@ -17,7 +17,7 @@ import com.example.project2_wod_cs.Database.entities.User;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {User.class, CharacterSheet.class, Game.class}, version = 5, exportSchema = false)
+@Database(entities = {User.class, CharacterSheet.class, Game.class}, version = 6, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     public static final String DATABASE_NAME = "WODCSDatabase";

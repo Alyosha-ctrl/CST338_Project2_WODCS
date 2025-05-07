@@ -10,6 +10,7 @@ import com.example.project2_wod_cs.Database.entities.CharacterSheet;
 import com.example.project2_wod_cs.Database.entities.User;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -18,8 +19,8 @@ public class AppDataRepository {
     private ArrayList<User> allUsers;
 
     private ArrayList<CharacterSheet> allSheets;
-    private UserDAO userDAO;
-    private CharacterSheetDAO characterSheetDAO;
+    private final UserDAO userDAO;
+    private final CharacterSheetDAO characterSheetDAO;
 
     private static AppDataRepository repository;
 
@@ -84,7 +85,7 @@ public class AppDataRepository {
         return characterSheetDAO.getSheetByCharacterName(characterName);
     }
 
-    public LiveData<CharacterSheet> getSheetByOwnerId(int ownerId){
+    public LiveData<List<CharacterSheet>> getSheetByOwnerId(int ownerId){
         return  characterSheetDAO.getSheetByOwnerId(ownerId);
     }
 

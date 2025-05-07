@@ -8,17 +8,24 @@ import android.os.Bundle;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 
 import com.example.project2_wod_cs.Database.AppDataRepository;
+import com.example.project2_wod_cs.Database.entities.CharacterSheet;
+import com.example.project2_wod_cs.Database.entities.User;
 import com.example.project2_wod_cs.databinding.ActivityCharacterSheetViewBinding;
 
 public class ActivityCharacterSheetView extends AppCompatActivity {
     ActivityCharacterSheetViewBinding binding;
     private AppDataRepository repository;
-    private int loggedInUserId = -1;
+    private final int loggedInUserId = -1;
     private String userName = "";
-
-    private boolean textEditable = false;
+    private CharacterSheet characterSheet;
+    private final boolean isVampire = false;
+    private final boolean isWizard = false;
+    private final boolean isHunter = false;
+    private final boolean textEditable = false;
+    private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +35,16 @@ public class ActivityCharacterSheetView extends AppCompatActivity {
 
         repository = AppDataRepository.getRepository(getApplication());
         userName = getIntent().getStringExtra(USERNAME_KEY);//Imported from the Landing Page activity
+
+        repository.getUserByUserName(userName).observe(this, new Observer<User>() {
+            @Override
+            public void onChanged(User user) {
+                if(user != null){
+                    userId = user.getId();
+                }
+            }
+        });
+
 
     }
 

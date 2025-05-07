@@ -42,11 +42,7 @@ public class SignUp extends AppCompatActivity {
         binding.isStoryTellerCheckBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(binding.isStoryTellerCheckBox.isChecked()){
-                    isStoryTeller = true;
-                }else{
-                    isStoryTeller = false;
-                }
+                isStoryTeller = binding.isStoryTellerCheckBox.isChecked();
             }
         });
 

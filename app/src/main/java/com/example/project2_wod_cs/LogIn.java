@@ -23,7 +23,7 @@ public class LogIn extends AppCompatActivity {
 
     private String username = "";
     private String password = "";
-    private String passwordAgain = "";
+    private final String passwordAgain = "";
     private int loggedInUserId;
 
     @Override
