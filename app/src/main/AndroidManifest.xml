@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Project2_WOD_CS"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityCharacterSheetView"
+            android:exported="false" />
+        <activity
+            android:name=".CharacterSheetBuilderActivity"
+            android:exported="false" />
+        <activity
             android:name=".MetaSheets"
             android:exported="false" />
         <activity
@@ -24,6 +30,8 @@
         <activity
             android:name=".LandingPage"
             android:exported="false" />
+        <activity android:name=".ButtonRoll"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

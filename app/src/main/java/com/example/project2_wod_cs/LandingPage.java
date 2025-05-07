@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -48,6 +47,7 @@ public class LandingPage extends AppCompatActivity {
             public void onChanged(User user) {
                 if(user != null && user.isStoryTeller()){
                     binding.storytellerButton.setVisibility(View.VISIBLE);
+                    binding.playerButton.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -70,11 +70,20 @@ public class LandingPage extends AppCompatActivity {
         binding.storytellerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startStoryteller();
+                startPlayer();
             }
         });
 
         binding.welcomeText.setText("Welcome " + username);
+
+        binding.diceButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = ButtonRoll.buttonRollIntentFactory(getApplicationContext());
+                startActivity(intent);
+            }
+        });
+
     }
 
 

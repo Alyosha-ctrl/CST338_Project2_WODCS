@@ -13,11 +13,16 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 
 import com.example.project2_wod_cs.Database.AppDataRepository;
 import com.example.project2_wod_cs.Database.entities.CharacterSheet;
 import com.example.project2_wod_cs.Database.entities.User;
 import com.example.project2_wod_cs.databinding.ActivityMetaSheetsBinding;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MetaSheets extends AppCompatActivity {
 
@@ -25,7 +30,7 @@ public class MetaSheets extends AppCompatActivity {
 
     public static final String USERNAME_KEY = "user_id";
 
-    private String [] names = {"String", "Bloodsucker", "Stabber", "Bastard",};
+    private ArrayList<String> names = new ArrayList<>();
 
     private AppDataRepository repository;
     private String username = "";
@@ -51,14 +56,21 @@ public class MetaSheets extends AppCompatActivity {
         spinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                destination = names[position];
+                destination = parent.getItemAtPosition(position).toString();
             }
         });
 
         binding.sheetGoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startSheet(destination);
+                startSheet();
+            }
+        });
+
+        binding.sheetBuilderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startSheetBuilder();
             }
         });
 
@@ -76,12 +88,17 @@ public class MetaSheets extends AppCompatActivity {
         return intent;
     }
 
-    private void startSheet(String sheetName){
+    private void startSheet(){
         if(destination.equals("hnv-9uwahgas")){
             toastMaker("To Move On Requires You to Choose An Option");
             return;
         }
-        toastMaker("Cannot get to sheet " + sheetName + ".\nIt does not currently exist");
+        startActivity(ActivityCharacterSheetView.activityCharacterSheetViewIntentFactory(getApplicationContext()));
+        toastMaker("Cannot get to sheet " + destination + ".\nThe sheet activity does not currently exist");
+    }
+
+    private void startSheetBuilder(){
+        startActivity(CharacterSheetBuilderActivity.characterSheetBuilderActivityIntentFactory(getApplicationContext()));
     }
 
     private void toastMaker(String message) {
@@ -89,6 +106,10 @@ public class MetaSheets extends AppCompatActivity {
     }
 
     private void getSheetNameList(){
-        toastMaker("Currently Does Nothing");
+        names.clear();
+        names.add("Slinky the Magnificent");
+        names.add("Bloodsucker");
+        names.add("Begger");
+        names.add("Sucker");
     }
 }

@@ -16,6 +16,8 @@ import java.util.concurrent.Future;
 
 public class AppDataRepository {
     private ArrayList<User> allUsers;
+
+    private ArrayList<CharacterSheet> allSheets;
     private UserDAO userDAO;
     private CharacterSheetDAO characterSheetDAO;
 
@@ -53,6 +55,10 @@ public class AppDataRepository {
         return allUsers;
     }
 
+    public ArrayList<CharacterSheet> getAllSheets() {
+        return allSheets;
+    }
+
     public void insertUser(User... user){
         AppDatabase.databaseWriteExecutor.execute(()->{
             userDAO.insert(user);
@@ -73,6 +79,14 @@ public class AppDataRepository {
             characterSheetDAO.insert(sheet);
         });
     }
+
+    public LiveData<CharacterSheet> getSheetByCharacterName(String characterName){
+        return characterSheetDAO.getSheetByCharacterName(characterName);
+    }
+
+//    public LiveData<CharacterSheet> getSheetByOwnerId(int ownerId){
+//        return  characterSheetDAO.getSheetByOwnerId(ownerId);
+//    }
 
     public LiveData<CharacterSheet.UserWithCharacterSheets> getUserWithSheets(int userId){
         return userDAO.getUserWithCharacterSheets(userId);

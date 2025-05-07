@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityCharacterSheetView">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/SheetTypeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sheettype"
+                android:layout_gravity="center"
+                android:textSize="24sp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/SheetBuilderSheetNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/playerSheetName"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/SheetNameDisplayEditText"
+                    android:inputType="text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blankspace"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/SheetNatureTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/nature"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/SheetNatureDisplayEditText"
+                    android:inputType="text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blankspace"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/SheetDependentTextView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/blankspace"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/SheetDependentDisplayEditText1"
+                    android:inputType="text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blankspace"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/SheetBuilderPlayerNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/PlayerNameDisplayEditText"
+                    android:inputType="text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blankspace"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/SheetBuilderDemeanorTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/demeanor"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/SheetBuilderDemeanorDisplayEditText"
+                    android:inputType="text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blankspace"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/SheetDependentTextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/blankspace"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/SheetDependentDisplayEditText2"
+                    android:inputType="text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blankspace"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/SheetBuilderChronicleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chronicle"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/SheetChronicleDisplayEditText"
+                    android:inputType="text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blankspace"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/SheetBuilderConceptTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/concept"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/SheetBuilderConceptDisplayEditText"
+                    android:inputType="text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blankspace"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/SheetDependentTextView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/blankspace"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/SheetDependentDisplayEditText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blankspace"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="8dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/AttributesTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/attributes"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/physical"
+                        android:textSize="16sp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="36dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sociallabel"
+                        android:textSize="16sp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mental"
+                        android:textSize="16sp"
+                        android:paddingLeft="36dp"
+                        android:paddingRight="8dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/strength"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/SheetBuilderStrengthDisplayEditText"
+                        android:inputType="number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/charisma"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/SheetBuilderCharismaDisplayEditText"
+                        android:inputType="number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/perception"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/SheetBuilderPerceptionDisplayEditText"
+                        android:inputType="number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="4dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dexterity"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/SheetBuilderDexterityDisplayEditText"
+                        android:inputType="number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:text="@string/blankspace"
+                        android:textSize="14sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/manipulation"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/SheetBuilderManipulationDisplayEditText"
+                        android:inputType="number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:text="@string/blankspace"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/intelligence"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/SheetBuilderIntelligenceDisplayEditText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:text="@string/blankspace"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stamina"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/SheetBuilderStaminaDisplayEditText"
+                        android:inputType="number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/appearance"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/SheetBuilderAppearanceDisplayEditText"
+                        android:inputType="number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/wits"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/SheetBuilderWitsDisplayEditText"
+                        android:inputType="number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blankspace"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="4dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:paddingTop="16dp">
+
+                <TextView
+                    android:id="@+id/SheetSpecificResourceTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="@string/blankspace"/>
+
+                <EditText
+                    android:id="@+id/SheetSpecificResourceDotsEditText"
+                    android:inputType="number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="@string/blankspace"/>
+
+                <TextView
+                    android:id="@+id/WillpowerTextView"
+                    android:layout_width="wrap_content"
+                    android:paddingTop="8dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/willpower"
+                    android:textSize="18sp"/>
+
+                <EditText
+                    android:id="@+id/WillpowerDotsEditText"
+                    android:inputType="number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blankspace"
+                    android:textSize="18sp"/>
+
+                <EditText
+                    android:id="@+id/WillpowerPermanentDotsEditText"
+                    android:inputType="number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blankspace"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/HealthTextView"
+                    android:layout_width="wrap_content"
+                    android:paddingTop="8dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/health"
+                    android:textSize="18sp"/>
+
+                <EditText
+                    android:id="@+id/HealthDotsEditeText"
+                    android:inputType="number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blankspace"
+                    android:textSize="18sp"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>
