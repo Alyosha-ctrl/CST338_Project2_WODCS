@@ -22,12 +22,12 @@ public interface CharacterSheetDAO {
     @Delete
     void delete(CharacterSheet sheet);
 
-    @Query("SELECT * FROM " + AppDatabase.CHARACTER_SHEET_TABLE + " ORDER BY characterName")
-    LiveData<ArrayList<CharacterSheet>> getAllSheets();
+//    @Query("SELECT * FROM " + AppDatabase.CHARACTER_SHEET_TABLE + " ORDER BY characterName")
+//    LiveData<ArrayList<CharacterSheet>> getAllSheets();
 
     @Query("SELECT * FROM " + AppDatabase.CHARACTER_SHEET_TABLE + " WHERE characterName == :characterName")
     LiveData<CharacterSheet> getSheetByCharacterName(String characterName);
 
-    @Query("SELECT * FROM " + AppDatabase.CHARACTER_SHEET_TABLE + " WHERE  ownerId == :ownerId")
-    LiveData<CharacterSheet> getSheetByOwnerId(int ownerId);
+//    @Query("SELECT * FROM " + AppDatabase.CHARACTER_SHEET_TABLE + " WHERE  ownerId == :ownerId")
+//    LiveData<CharacterSheet> getSheetByOwnerId(int ownerId);
 }
