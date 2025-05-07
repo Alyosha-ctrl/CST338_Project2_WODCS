@@ -60,7 +60,21 @@ public class ExampleInstrumentedTest {
     }
 
     //Nikolii Proud's Activity Intent Factory Tests
+    @Test
+    public void sheetIntentFactory(){
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        Intent intent = ActivityCharacterSheetView.activityCharacterSheetViewIntentFactory(appContext);
+        Log.d(LOG_TAG, intent.getComponent().getClassName());
+        assertEquals(ActivityCharacterSheetView.class.getName(), intent.getComponent().getClassName());
+    }
 
+    @Test
+    public void sheetBuilderIntentFactory(){
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        Intent intent = CharacterSheetBuilderActivity.characterSheetBuilderActivityIntentFactory(appContext);
+        Log.d(LOG_TAG, intent.getComponent().getClassName());
+        assertEquals(CharacterSheetBuilderActivity.class.getName(), intent.getComponent().getClassName());
+    }
     //Antonio Barron's Activity Intent Factory Tests
     @Test
     public void landingPageIntentFactory(){
@@ -68,7 +82,7 @@ public class ExampleInstrumentedTest {
         String exampleName="goober";
         Intent intent = LandingPage.landingPageIntentFactory(appContext, exampleName);
         Log.d(LOG_TAG, intent.getComponent().getClassName());
-        assertEquals(LogIn.class.getName(), intent.getComponent().getClassName());
+        assertEquals(LandingPage.class.getName(), intent.getComponent().getClassName());
         assertEquals(exampleName, intent.getStringExtra(LandingPage.USERNAME_KEY));
     }
 
