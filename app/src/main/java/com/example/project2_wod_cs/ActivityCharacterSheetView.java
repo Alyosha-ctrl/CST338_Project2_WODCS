@@ -3,6 +3,7 @@ package com.example.project2_wod_cs;
 import static com.example.project2_wod_cs.LandingPage.USERNAME_KEY;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -36,5 +37,9 @@ public class ActivityCharacterSheetView extends AppCompatActivity {
         SharedPreferences.Editor sharedPrefEditor = sharedPreferences.edit();
         sharedPrefEditor.putInt(getString(R.string.preference_userId_key), loggedInUserId);
         sharedPrefEditor.apply();
+    }
+
+    static Intent activityCharacterSheetViewIntentFactory(Context context){
+        return new Intent(context, ActivityCharacterSheetView.class);
     }
 }
