@@ -16,6 +16,8 @@ import java.util.concurrent.Future;
 
 public class AppDataRepository {
     private ArrayList<User> allUsers;
+
+    private ArrayList<CharacterSheet> allSheets;
     private UserDAO userDAO;
     private CharacterSheetDAO characterSheetDAO;
 
@@ -51,6 +53,10 @@ public class AppDataRepository {
 
     public ArrayList<User> getAllUsers() {
         return allUsers;
+    }
+
+    public ArrayList<CharacterSheet> getAllSheets() {
+        return allSheets;
     }
 
     public void insertUser(User... user){
