@@ -50,14 +50,21 @@ public class MetaSheets extends AppCompatActivity {
         spinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                destination = names[position];
+                destination = parent.getItemAtPosition(position).toString();
             }
         });
 
         binding.sheetGoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startSheet(destination);
+                startSheet();
+            }
+        });
+
+        binding.sheetBuilderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startSheetBuilder();
             }
         });
 
@@ -75,12 +82,16 @@ public class MetaSheets extends AppCompatActivity {
         return intent;
     }
 
-    private void startSheet(String sheetName){
+    private void startSheet(){
         if(destination.equals("hnv-9uwahgas")){
             toastMaker("To Move On Requires You to Choose An Option");
             return;
         }
-        toastMaker("Cannot get to sheet " + sheetName + ".\nIt does not currently exist");
+        toastMaker("Cannot get to sheet " + destination + ".\nThe sheet activity does not currently exist");
+    }
+
+    private void startSheetBuilder(){
+        toastMaker("SheetBuilder Not Currently Connected");
     }
 
     private void toastMaker(String message) {
